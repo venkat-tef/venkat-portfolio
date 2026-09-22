@@ -1,0 +1,76 @@
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.75rem 1rem;
+  background: var(--surface-0);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-xs);
+  text-align: center;
+  cursor: default;
+  transition: transform var(--dur-med) var(--ease-out),
+              box-shadow var(--dur-med) var(--ease-out),
+              border-color var(--dur-med) var(--ease-out);
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.skill-logo-wrapper {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--accent-grad-soft);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+}
+
+.skill-card:hover .skill-logo-wrapper {
+  background: var(--accent-grad);
+  transform: scale(1.05);
+}
+
+.skill-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.skill-card:hover .skill-logo {
+  transform: rotate(8deg) scale(1.08);
+}
+
+.skill-name {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ink-800);
+}
+
+@media (max-width: 576px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-logo-wrapper { width: 62px; height: 62px; }
+  .skill-logo { width: 34px; height: 34px; }
+}

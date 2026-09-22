@@ -1,0 +1,18 @@
+<section class="skills-section page-section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow"><i class="fa-solid fa-layer-group"></i>&nbsp;Tech Stack</span>
+      <h2>Skills &amp; Tools</h2>
+      <p>The languages, frameworks and libraries I use to ship reliable, polished front-ends.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal" *ngFor="let s of skills; let i = index" [style.animation-delay.ms]="i * 70">
+        <div class="skill-logo-wrapper">
+          <img [src]="s.logo" [alt]="s.name + ' logo'" class="skill-logo">
+        </div>
+        <p class="skill-name">{{ s.name }}</p>
+      </div>
+    </div>
+  </div>
+</section>

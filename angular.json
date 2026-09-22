@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "venkat-portfolio": {
+    "portfolio": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/venkat-portfolio",
+            "outputPath": "dist/portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -24,10 +24,9 @@
               "src/favicon.ico",
               "src/assets"
             ],
-           "styles": [
-  "src/styles.css",
-  "node_modules/bootstrap/dist/css/bootstrap.min.css"
-],
+            "styles": [
+              "src/styles.css"
+            ],
             "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -45,11 +44,18 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": {
+                  "inline": false
+                }
+              }
             },
             "development": {
               "optimization": false,
@@ -63,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "venkat-portfolio:build:production"
+              "buildTarget": "portfolio:build:production"
             },
             "development": {
-              "buildTarget": "venkat-portfolio:build:development"
+              "buildTarget": "portfolio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "venkat-portfolio:build"
+            "buildTarget": "portfolio:build"
           }
         },
         "test": {
@@ -94,11 +100,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
   },
   "cli": {
-    "analytics": "4adb2e5c-2020-4afa-95e1-39c428de07d5"
+    "analytics": "ada90896-8853-496a-a8d0-9c3d2445dcb2"
   }
 }
